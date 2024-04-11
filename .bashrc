@@ -1,7 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -56,8 +52,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# The following block is surrounded by two delimiters.
-# These delimiters must not be modified. Thanks.
 # START KALI CONFIG VARIABLES
 PROMPT_ALTERNATIVE=twoline
 NEWLINE_BEFORE_PROMPT=yes
@@ -117,14 +111,6 @@ if [ -x /usr/bin/dircolors ]; then
     export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -144,11 +130,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-eval $(thefuck --alias)
-if [ -e /etc/os-release ]; then
-    OSVER=`cat /etc/os-release | grep VERSION_ID | cut -d "\"" -f 2 | cut -d "." -f 1`
-else
-    OSVER=
-fi
-
