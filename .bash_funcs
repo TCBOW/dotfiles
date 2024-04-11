@@ -1,0 +1,8 @@
+go() {
+    cd $(${HOME}/git/devenv/scripts/go/disp.pl $1)
+    ls -F
+}
+sshgo() {
+    ssh $(${HOME}/git/devenv/scripts/sshgo/disp.pl $1)
+}
+

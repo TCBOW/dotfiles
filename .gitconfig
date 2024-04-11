@@ -1,0 +1,20 @@
+[core]
+	editor = vi
+	autocrlf = false
+	pager = delta
+[pull]
+	rebase = false
+[diff]
+	tool = vscode
+	colorMoved = dimmed_zebra
+[delta]
+	side-by-side = true
+[difftool "vscode"]
+	cmd = code --new-window --wait --diff $LOCAL $REMOTE
+[alias]
+	ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
+	lg = "!git log --graph --date=iso --format='%C(red)%d%C(reset) %s %C(green)%an%C(reset) %C(dim)%cd%C(reset) %C(blue)%h%C(reset)'"
+[credential]
+	helper = osxkeychain
+[fetch]
+	prune = true
