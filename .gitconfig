@@ -17,3 +17,6 @@
 	helper = osxkeychain
 [fetch]
 	prune = true
+[user]
+	email = tochibow9@gmail.com
+	name = TCBOW

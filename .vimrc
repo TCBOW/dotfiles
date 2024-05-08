@@ -89,3 +89,33 @@ set laststatus=2
 
 " Format the status line
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ Line:\ %l\ \ Column:\ %c\ \ %{(&fenc!=''?&fenc:&enc)}\ \ %{&ff}
+
+" ------------ Search
+" デフォルトはmagicモード
+set magic
+
+" デフォルトは大文字小文字を無視
+set ignorecase
+
+" 賢く大文字小文字を区別
+set smartcase
+
+" インクリメンタルサーチ
+set incsearch
+
+" すべてのマッチ箇所をハイライト
+set hlsearch
+
+" ファイル端に達しても、一周して検索を続行
+set wrapscan
+
+nnoremap <Leader>gg :vim //j <C-r>=expand('%:h').'/**'<CR> <CR>:copen 8<CR><C-w>J
+nnoremap <Leader>gG :vim //j <C-r>=expand('%:h').'/../**'<CR> <CR>:copen 8<CR><C-w>J
+nnoremap <Leader>q :copen 8<CR>
+nnoremap <C-l> :nohlsearch<CR><C-l>
+
+" ------------
+nnoremap <Space> zA
+" ["]で現在のディレクトリ 以下を再起的にgrepしてwindowに検索結果を表示
+nnoremap " *:grep /<C-r>// ** \|cw
+set wildignore+=bin/**,obj/**,*.md,*.o,tags,*.bin,*.zip,*.txt,Makefile,*.json
